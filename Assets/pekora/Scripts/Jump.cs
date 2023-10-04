@@ -1,20 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Jump : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int force = 5;
+
+    public void JumpUp()
+    { 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Jumping");
+            GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Force);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        JumpUp();
     }
-    
-    void Jump
 }
