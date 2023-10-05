@@ -1,61 +1,52 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
 
 public class PlayerControllerSimple : MonoBehaviour
 {
     public float forwardSpeed = 0.05f;
-    public int force = 5;
+    public int jumpForce = 5;
     private float horizontalInput;
-    public float sideSpeed;
+    public float sideSpeed = 3f;
     private Vector3 movedirection;
+
+    private float initialGravityScale;
+    private ConstantForce cf;
 
     public Rigidbody rb;
     
-    
-    // Start is called before the first frame update
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        cf = GetComponent<ConstantForce>();
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         transform.Translate(0,0,forwardSpeed  * Time.deltaTime);
-        JumpUp();
-    }
-    
-    public void JumpUp()
-    {
-
-        
+        Move();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Jumping");
-            GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Force);
+            JumpUp();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector3(movedirection.x * sideSpeed, rb.velocity.y, rb.velocity.z);
+    }
+
+    public void JumpUp()
+    {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     public void Move()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        movedirection = new Vector3(horizontalInput , 0 ,0);
         
-        if (Input.GetKeyDown((KeyCode.A)))
-        {
-            rb.velocity = new Vector3("Left", 0, 0);
-        }
-        if (Input.GetKeyDown((KeyCode.D)))
-        {
-            rb.velocity = new Vector3(sideSpeed, 0, 0);
-        }
     }
     
     
