@@ -40,6 +40,7 @@ public class PlayerControllerSimple : MonoBehaviour
 
         if (isTouchingGround == false && (rb.velocity.y > 0 || rb.velocity.y < 0))
         {
+            Debug.Log(rb.velocity);
             Debug.Log("WAS TRIGGERED!!½!!!");
             forceDirection.y = downwardForce;
             cf.force = forceDirection;
@@ -78,7 +79,7 @@ public class PlayerControllerSimple : MonoBehaviour
             
             // Animation is not used for my character yet.
             // anim.SetBool(IsLanded, true);
-            // Debug.Log("Player is grounded!");
+            Debug.Log("Player is grounded!");
         }
     }
     
@@ -88,7 +89,7 @@ public class PlayerControllerSimple : MonoBehaviour
         {
             isTouchingGround = false;
             // anim.SetBool(IsLanded, false);
-            // Debug.Log("NO GROUND!");
+            Debug.Log("NO GROUND!");
         }
     }
     
