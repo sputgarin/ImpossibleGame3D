@@ -9,6 +9,7 @@ public class Trap : MonoBehaviour
     {
         Destroy(other.gameObject);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(0);
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene);
     }
 }

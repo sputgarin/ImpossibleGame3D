@@ -9,6 +9,9 @@ public class Goal : MonoBehaviour
     {
         
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(1);
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene++;
+        int nextScene = currentScene;
+        SceneManager.LoadScene(nextScene);
     }
 }

@@ -65,7 +65,7 @@ public class EasterEggButton : MonoBehaviour
         
         explosion.SetActive(true);
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         spaceshipRenderer.enabled = true;
         explosion.SetActive(false);
         isExploding = false;
