@@ -16,6 +16,8 @@ public class PlayerControllerSimple : MonoBehaviour
     
     public Rigidbody rb;
 
+    private int colliderCounter;
+
     [SerializeField] 
     private float downwardForce;
     
@@ -31,7 +33,7 @@ public class PlayerControllerSimple : MonoBehaviour
     void Update()
     {
         // Code In the classroom Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
-        transform.Translate(0,0,forwardSpeed  * Time.deltaTime);
+        MoveForwardAtForwardSpeed();
         Move();
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
@@ -40,10 +42,7 @@ public class PlayerControllerSimple : MonoBehaviour
 
         if (isTouchingGround == false && (rb.velocity.y > 0 || rb.velocity.y < 0))
         {
-            Debug.Log(rb.velocity);
-            Debug.Log("WAS TRIGGERED!!½!!!");
-            forceDirection.y = downwardForce;
-            cf.force = forceDirection;
+            AddForceWhenPlayerGoesUpAndDown();
         }
 
         else
@@ -51,6 +50,22 @@ public class PlayerControllerSimple : MonoBehaviour
             forceDirection.y = 0;
             cf.force = forceDirection;
         }
+    }
+
+    private void AddForceWhenPlayerGoesUpAndDown()
+    {
+        Debug.Log(rb.velocity);
+        Debug.Log("Add Force!");
+        forceDirection.y = downwardForce;
+        cf.force = forceDirection;
+    }
+
+    private void MoveForwardAtForwardSpeed()
+    {
+        // Marc's code using velocity with the rigidbody. might need to change but then it might 
+        // Change the whole game. need to test.
+        // rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, forwardSpeed);
+        transform.Translate(0, 0, forwardSpeed * Time.deltaTime);
     }
 
     private void FixedUpdate()
@@ -75,21 +90,42 @@ public class PlayerControllerSimple : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            isTouchingGround = true;
+            colliderCounter++;
+            Debug.Log(colliderCounter);
+            if (colliderCounter > 0)
+            {
+                isTouchingGround = true;
+            Debug.Log("Player is grounded!");
+            }
+            
             
             // Animation is not used for my character yet.
             // anim.SetBool(IsLanded, true);
-            Debug.Log("Player is grounded!");
         }
     }
+
+    /*
+    bool isTrouchingGround()
+    {
+        int layerMask = LayerMask.GetMask(("Ground"));
+        return Physics.CheckBox(transform.position, transform.lossyScale / 1.99f, transform.rotation, layerMask);
+    }
+    */
     
     private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            isTouchingGround = false;
+            colliderCounter--;
+            Debug.Log(colliderCounter);
+            if (colliderCounter < 1)
+            {
+                isTouchingGround = false;
+                Debug.Log("NO GROUND!");
+            }
+            
             // anim.SetBool(IsLanded, false);
-            Debug.Log("NO GROUND!");
+            
         }
     }
     
