@@ -33,7 +33,7 @@ public class PlayerControllerSimple : MonoBehaviour
     void Update()
     {
         // Code In the classroom Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
-        MoveForwardAtForwardSpeed();
+        // MoveForwardAtForwardSpeed();
         Move();
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
@@ -47,11 +47,36 @@ public class PlayerControllerSimple : MonoBehaviour
 
         else
         {
-            forceDirection.y = 0;
-            cf.force = forceDirection;
+            ResetForceToZero();
         }
     }
 
+
+
+    private void FixedUpdate()
+    {
+        
+        rb.velocity = new Vector3(movedirection.x * sideSpeed, rb.velocity.y, forwardSpeed );
+    }
+
+    public void JumpUp()
+    {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    public void Move()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        movedirection = new Vector3(horizontalInput , 0 ,0);
+        
+    }
+    
+    private void ResetForceToZero()
+    {
+        forceDirection.y = 0;
+        cf.force = forceDirection;
+    }
+    
     private void AddForceWhenPlayerGoesUpAndDown()
     {
         Debug.Log(rb.velocity);
@@ -67,40 +92,28 @@ public class PlayerControllerSimple : MonoBehaviour
         // rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, forwardSpeed);
         transform.Translate(0, 0, forwardSpeed * Time.deltaTime);
     }
-
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector3(movedirection.x * sideSpeed, rb.velocity.y, rb.velocity.z);
-    }
-
-    public void JumpUp()
-    {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    }
-
-    public void Move()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        movedirection = new Vector3(horizontalInput , 0 ,0);
-        
-    }
     
     // Used to check if the player is grounded.
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            colliderCounter++;
-            Debug.Log(colliderCounter);
-            if (colliderCounter > 0)
-            {
-                isTouchingGround = true;
-            Debug.Log("Player is grounded!");
-            }
-            
-            
+            CheckIfPlayerIsGrounded();
+
+
             // Animation is not used for my character yet.
             // anim.SetBool(IsLanded, true);
+        }
+    }
+
+    private void CheckIfPlayerIsGrounded()
+    {
+        colliderCounter++;
+        Debug.Log(colliderCounter);
+        if (colliderCounter > 0)
+        {
+            isTouchingGround = true;
+            Debug.Log("Player is grounded!");
         }
     }
 

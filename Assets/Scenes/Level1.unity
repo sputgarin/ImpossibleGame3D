@@ -194,11 +194,11 @@ PrefabInstance:
     - target: {fileID: 2397960, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 687982513}
+      objectReference: {fileID: 1418408963}
     - target: {fileID: 3305964, guid: 11530f2b0a0cd2442949827ecbb622f2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 408494301}
+      objectReference: {fileID: 450460392}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 145.65
+      value: 149.2
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -637,10 +637,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 252083278}
 --- !u!1001 &313274651
@@ -661,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 104.92
+      value: 106.08
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -700,7 +700,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
---- !u!43 &408494301
+--- !u!43 &450460392
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -878,6 +878,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9513007778586175, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 9ae44797bcd6a484998c32eb884c2394, type: 2}
+    - target: {fileID: 595889802208206092, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1169518794091385285, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -919,12 +927,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2807620112902228953, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807620112902228953, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: forwardSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807620112902228953, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
       propertyPath: downwardForce
-      value: -4.5
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044195875106691089, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044195875106691089, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8700987367159683889, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934651802972648484, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1261,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 116.8
+      value: 118.22
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1449,10 +1477,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 252083278}
 --- !u!4 &574943717 stripped
@@ -1900,87 +1928,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!21 &687982513
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SingleLine-LightSaber(Clone)
-  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _Glossiness: 0.5
-    - _LightSaberFactor: 0.8
-    - _LineScale: 0.050000012
-    - _LineWidth: 20
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _UvBasedLightSaberFactor: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
 --- !u!4 &699969643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6849785214952679199, guid: f09cf7d45807f064b83a6abf19cca5c3, type: 3}
@@ -2356,10 +2303,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 252083278}
 --- !u!4 &1006601759 stripped
@@ -2446,7 +2393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 139.65
+      value: 143.2
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2844,7 +2791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 128.45
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3006,6 +2953,87 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 626773909}
   m_SourcePrefab: {fileID: 100100000, guid: dea930cc57d80fb4f99193ca80bc5105, type: 3}
+--- !u!21 &1418408963
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SingleLine-LightSaber(Clone)
+  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Glossiness: 0.5
+    - _LightSaberFactor: 0.8
+    - _LineScale: 0.050000012
+    - _LineWidth: 20
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UvBasedLightSaberFactor: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1443444624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3162,10 +3190,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 252083278}
 --- !u!4 &1547585156 stripped
@@ -3196,7 +3224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 128.45
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 4171301049798666593, guid: 43694b30661997749bd6b46bf9e3d707, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3407,6 +3435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinTunnel
       objectReference: {fileID: 0}
+    - target: {fileID: 168127207382380337, guid: aa643aa09aa0444479506dbb64076ae3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 657136737032254859, guid: aa643aa09aa0444479506dbb64076ae3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3417,7 +3449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657136737032254859, guid: aa643aa09aa0444479506dbb64076ae3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 148.56999
+      value: 152.12
       objectReference: {fileID: 0}
     - target: {fileID: 657136737032254859, guid: aa643aa09aa0444479506dbb64076ae3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3868,6 +3900,10 @@ PrefabInstance:
     - target: {fileID: 5160575510842586498, guid: 3aec97b49e9eb89448eb534e0d3f9ee1, type: 3}
       propertyPath: m_Name
       value: DeathTunnel1X6 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160575510842586498, guid: 3aec97b49e9eb89448eb534e0d3f9ee1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5536574005305831224, guid: 3aec97b49e9eb89448eb534e0d3f9ee1, type: 3}
       propertyPath: m_LocalPosition.x
