@@ -12,6 +12,7 @@
 
 # Ignore the Skyboxes folder
 /[Aa]ssets/SkyboxesNew/
+/[Aa]ssets/Models/NotInUse/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
