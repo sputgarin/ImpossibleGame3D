@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerControllerSimple : MonoBehaviour
@@ -47,11 +48,10 @@ public class PlayerControllerSimple : MonoBehaviour
 
         else
         {
-            ResetForceToZero();
+            forceDirection.y = 0;
+            cf.force = forceDirection;
         }
     }
-
-
 
     private void FixedUpdate()
     {
@@ -71,11 +71,6 @@ public class PlayerControllerSimple : MonoBehaviour
         
     }
     
-    private void ResetForceToZero()
-    {
-        forceDirection.y = 0;
-        cf.force = forceDirection;
-    }
     
     private void AddForceWhenPlayerGoesUpAndDown()
     {
@@ -98,22 +93,17 @@ public class PlayerControllerSimple : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            CheckIfPlayerIsGrounded();
-
-
+            colliderCounter++;
+            Debug.Log(colliderCounter);
+            if (colliderCounter > 0)
+            {
+                isTouchingGround = true;
+            Debug.Log("Player is grounded!");
+            }
+            
+            
             // Animation is not used for my character yet.
             // anim.SetBool(IsLanded, true);
-        }
-    }
-
-    private void CheckIfPlayerIsGrounded()
-    {
-        colliderCounter++;
-        Debug.Log(colliderCounter);
-        if (colliderCounter > 0)
-        {
-            isTouchingGround = true;
-            Debug.Log("Player is grounded!");
         }
     }
 
