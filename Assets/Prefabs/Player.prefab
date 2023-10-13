@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 595889802208206092}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   sideSpeed: 5
   rb: {fileID: 0}
   downwardForce: 5
+  explosion: {fileID: 0}
 --- !u!65 &8934651802972648484
 BoxCollider:
   m_ObjectHideFlags: 0

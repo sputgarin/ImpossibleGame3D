@@ -128,63 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4171301049798666593, guid: 39e843b5577debb46b9912d891bf0e3f, type: 3}
   m_PrefabInstance: {fileID: 2134699852}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &70984981
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 86
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 586
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8139267963128254116, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8917036802184467486, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
-      propertyPath: m_Name
-      value: SpaceStation
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3cd5122e174715145bb5541a9927237c, type: 3}
 --- !u!1001 &77095695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2431,7 +2374,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 860a66ca4259b384f9ec01b687f71c3c, type: 2}
+  m_CustomSkybox: {fileID: 2100000, guid: 3e8bc5155c4c9ed46a63ac64c06408f3, type: 2}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5280,7 +5223,6 @@ SceneRoots:
   - {fileID: 655284594}
   - {fileID: 2089481540}
   - {fileID: 1086264445}
-  - {fileID: 70984981}
   - {fileID: 963194228}
   - {fileID: 1332346390}
   - {fileID: 95470396}

@@ -21,9 +21,13 @@ public class PlayerControllerSimple : MonoBehaviour
 
     [SerializeField] 
     private float downwardForce;
+
+    public GameObject explosion;
+    
     
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         cf = GetComponent<ConstantForce>();
         forceDirection = new Vector3(0, 0, 0);
@@ -130,6 +134,19 @@ public class PlayerControllerSimple : MonoBehaviour
             // anim.SetBool(IsLanded, false);
             
         }
+    }
+
+    public void Death()
+    {
+        MeshRenderer spaceshipRenderer;
+        //Collider spaceshipCollider;
+        spaceshipRenderer = GetComponentInChildren<MeshRenderer>();
+        spaceshipRenderer.enabled = false;
+        explosion.SetActive(true);
+        this.GetComponent<PlayerControllerSimple>().enabled = false;
+        rb.isKinematic = true;
+        //spaceshipCollider = GetComponent<Collider>();
+        //spaceshipCollider.enabled = false;
     }
     
     

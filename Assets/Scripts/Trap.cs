@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Trap : MonoBehaviour
 {
-    IEnumerator OnCollisionEnter(Collision other)
+    IEnumerator OnCollisionEnter(Collision collision)
     {
-        Destroy(other.gameObject);
-        yield return new WaitForSeconds(2);
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentScene);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.SendMessage("Death");
+            yield return new WaitForSeconds(2);
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentScene);
+        }
+
     }
 }
