@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerSimple : MonoBehaviour
 {
+    public bool canJump = true;
     public float forwardSpeed = 0.05f;
     public float jumpForce = 5;
     private float horizontalInput;
@@ -43,7 +44,7 @@ public class PlayerControllerSimple : MonoBehaviour
         // Code In the classroom Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
         // MoveForwardAtForwardSpeed();
         Move();
-        if (Input.GetButtonDown("Jump") && isTouchingGround)
+        if (Input.GetButtonDown("Jump") && isTouchingGround && canJump == true)
         {
             JumpUp();
         }
