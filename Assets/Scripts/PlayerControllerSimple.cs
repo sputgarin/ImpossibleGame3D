@@ -23,15 +23,18 @@ public class PlayerControllerSimple : MonoBehaviour
     private float downwardForce;
 
     public GameObject explosion;
+    public Vector3 startingPosition;
     
+    public MeshRenderer spaceshipRenderer;
     
     void Start()
     {
-        
+        spaceshipRenderer = GetComponentInChildren<MeshRenderer>();
         rb = GetComponent<Rigidbody>();
         cf = GetComponent<ConstantForce>();
         forceDirection = new Vector3(0, 0, 0);
-        
+        startingPosition = this.gameObject.transform.position;
+
     }
 
 
@@ -138,9 +141,9 @@ public class PlayerControllerSimple : MonoBehaviour
 
     public void Death()
     {
-        MeshRenderer spaceshipRenderer;
+        
         //Collider spaceshipCollider;
-        spaceshipRenderer = GetComponentInChildren<MeshRenderer>();
+        
         spaceshipRenderer.enabled = false;
         explosion.SetActive(true);
         this.GetComponent<PlayerControllerSimple>().enabled = false;
@@ -148,6 +151,15 @@ public class PlayerControllerSimple : MonoBehaviour
         //spaceshipCollider = GetComponent<Collider>();
         //spaceshipCollider.enabled = false;
     }
-    
+
+    public void Respawn()
+    {
+        explosion.SetActive(false);
+        this.gameObject.transform.position = startingPosition;
+        spaceshipRenderer.enabled = true;
+        this.GetComponent<PlayerControllerSimple>().enabled = true;
+        rb.isKinematic = false;
+        
+    }
     
 }

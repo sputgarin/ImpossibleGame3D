@@ -11,8 +11,9 @@ public class Trap : MonoBehaviour
         {
             collision.gameObject.SendMessage("Death");
             yield return new WaitForSeconds(2);
-            int currentScene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentScene);
+            collision.gameObject.SendMessage("Respawn");
+            //int currentScene = SceneManager.GetActiveScene().buildIndex;
+           // SceneManager.LoadScene(currentScene);
         }
 
     }

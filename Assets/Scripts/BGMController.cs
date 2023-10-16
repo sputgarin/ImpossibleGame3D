@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MyNamespace
-{
+
     public class BGMController : MonoBehaviour
     {
         public AudioSource bgmAudioSource;
@@ -45,4 +44,4 @@ namespace MyNamespace
 
         // Update is called once per frame
     }
-}
+
