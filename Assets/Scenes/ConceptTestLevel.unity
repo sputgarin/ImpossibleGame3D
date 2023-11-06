@@ -254,6 +254,14 @@ PrefabInstance:
       propertyPath: downwardForce
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 8205070763427990994, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205070763430452074, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8700987367159683889, guid: 68164b471e5a7f2439f76d6713eb6891, type: 3}
       propertyPath: m_Name
       value: Player
