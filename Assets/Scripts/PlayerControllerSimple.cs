@@ -10,7 +10,7 @@ public class PlayerControllerSimple : MonoBehaviour
     private float horizontalInput;
     public float sideSpeed = 3f;
     private Vector3 movedirection;
-    
+    public ParticleSystem sparks;
 
     private bool isTouchingGround;
     
@@ -36,6 +36,7 @@ public class PlayerControllerSimple : MonoBehaviour
         cf = GetComponent<ConstantForce>();
         forceDirection = new Vector3(0, 0, 0);
         startingPosition = this.gameObject.transform.position;
+        StopSparksEffect();
 
     }
 
@@ -163,5 +164,16 @@ public class PlayerControllerSimple : MonoBehaviour
         rb.isKinematic = false;
         
     }
+
+    public void PlaySparksEffect()
+    {
+        sparks.Play();
+    }
+
+    public void StopSparksEffect()
+    {
+        sparks.Stop();
+    }
+    
     
 }

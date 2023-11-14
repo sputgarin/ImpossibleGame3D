@@ -5,8 +5,25 @@ using UnityEngine;
 
 public class grindingSparks : MonoBehaviour
 {
-    private void OnCollisionStay(Collision other)
+    private PlayerControllerSimple player;
+    private void Start()
+    {
+        player = FindFirstObjectByType<PlayerControllerSimple>();
+    }
+
+    private void OnCollisionEnter(Collision other)
     {
         Debug.Log("SPARKS!!!!");
+        player.PlaySparksEffect();
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+         player.StopSparksEffect();
     }
 }
