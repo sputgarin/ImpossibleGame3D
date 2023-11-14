@@ -10,6 +10,7 @@ public class PlayerControllerSimple : MonoBehaviour
     private float horizontalInput;
     public float sideSpeed = 3f;
     private Vector3 movedirection;
+    
 
     private bool isTouchingGround;
     
