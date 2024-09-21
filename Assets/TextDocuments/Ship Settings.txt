@@ -1,0 +1,6 @@
+
+Level 3:
+Forward Speed: 15
+Jump Force: 12
+Side Speed: 5
+Downward Force: -30
